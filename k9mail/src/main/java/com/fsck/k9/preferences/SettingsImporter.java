@@ -261,14 +261,12 @@ public class SettingsImporter {
                                     errorneousAccounts.add(importResult.original);
                                 }
                             } catch (InvalidSettingValueException e) {
-                                e.printStackTrace();
                                 if (K9.DEBUG) {
                                     Log.e(K9.LOG_TAG, "Encountered invalid setting while " +
                                             "importing account \"" + account.name + "\"", e);
                                 }
                                 errorneousAccounts.add(new AccountDescription(account.name, account.uuid));
                             } catch (Exception e) {
-                                e.printStackTrace();
                                 Log.e(K9.LOG_TAG, "Exception while importing account \"" +
                                         account.name + "\"", e);
                                 errorneousAccounts.add(new AccountDescription(account.name, account.uuid));
